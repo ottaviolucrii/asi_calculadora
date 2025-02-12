@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "997631959673",
+    "project_id": "calcu-ladora",
+    "storage_bucket": "calcu-ladora.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997631959673:android:69ed44a038f95043926aa8",
+        "android_client_info": {
+          "package_name": "com.exemplo.calculadora"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1T3iY1nVxvGR4rS_Zr4YHofEZNCVv-EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
