@@ -10,7 +10,7 @@ class Calculator extends StatelessWidget {
     return MaterialApp(
       home: Column(
         children: [
-          Display('123.45'),
+          Display('1234'),
           Keyboard(),
         ],
       ),

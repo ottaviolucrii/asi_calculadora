@@ -1,6 +1,5 @@
 import 'package:calcu_ladora/components/button_row.dart';
 import 'package:flutter/material.dart';
-import 'button_row.dart';
 import 'button.dart';
 
 class Keyboard extends StatelessWidget {
@@ -13,19 +12,32 @@ class Keyboard extends StatelessWidget {
       child: Column(
         children: [
           ButtonRow(buttons: [
+            Button('AC', big: true),
+            Button('%'),
+            Button('/'),
+          ]),
+          ButtonRow(buttons: [
             Button('7'),
             Button('8'),
             Button('9'),
+            Button('X'),
           ]),
           ButtonRow(buttons: [
             Button('4'),
             Button('5'),
             Button('6'),
+            Button('-'),
           ]),
           ButtonRow(buttons: [
             Button('1'),
             Button('2'),
             Button('3'),
+            Button('+'),
+          ]),
+          ButtonRow(buttons: [
+            Button('0', big: true),
+            Button(','),
+            Button('='),
           ]),
         ],
       ),
