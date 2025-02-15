@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'button.dart';
 
 class Keyboard extends StatelessWidget {
-  const Keyboard({super.key});
+  final void Function (String) cb;
+
+  const Keyboard({super.key, required this.cb});
 
   @override
   Widget build(BuildContext context) {
@@ -12,32 +14,36 @@ class Keyboard extends StatelessWidget {
       child: Column(
         children: [
           ButtonRow(buttons: [
-            Button('AC', big: true),
-            Button('%'),
-            Button('/'),
+            Button.big('AC',color: Button.DARK, cb : cb),
+            Button.operation('%', color: Button.DARK ,cb : cb),
+            Button.operation('/', cb : cb),
           ]),
+          SizedBox(height: 1),
           ButtonRow(buttons: [
-            Button('7'),
-            Button('8'),
-            Button('9'),
-            Button('X'),
+            Button('7', cb : cb),
+            Button('8', cb : cb),
+            Button('9', cb : cb),
+            Button.operation('x', cb : cb),
           ]),
+          SizedBox(height: 1),
           ButtonRow(buttons: [
-            Button('4'),
-            Button('5'),
-            Button('6'),
-            Button('-'),
+            Button('4', cb : cb),
+            Button('5', cb : cb),
+            Button('6', cb : cb),
+            Button.operation('-', cb : cb),
           ]),
+          SizedBox(height: 1),
           ButtonRow(buttons: [
-            Button('1'),
-            Button('2'),
-            Button('3'),
-            Button('+'),
+            Button('1', cb : cb),
+            Button('2', cb : cb),
+            Button('3', cb : cb),
+            Button.operation('+', cb : cb),
           ]),
+          SizedBox(height: 1),
           ButtonRow(buttons: [
-            Button('0', big: true),
-            Button(','),
-            Button('='),
+            Button.big('0', cb : cb),
+            Button.operation(',', cb : cb),
+            Button.operation('=', cb : cb),
           ]),
         ],
       ),

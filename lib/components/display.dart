@@ -11,7 +11,7 @@ class Display extends StatelessWidget {
     return Expanded(
       flex: 1,
       child: Container(
-        color: Colors.black87,
+        color: Color.fromRGBO(37, 37, 39, 1),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -25,7 +25,7 @@ class Display extends StatelessWidget {
                 maxLines: 1,
                 textAlign: TextAlign.end,
                 style: const TextStyle(
-                  fontWeight: FontWeight.w200,
+                  fontWeight: FontWeight.w100,
                   decoration: TextDecoration.none,
                   fontSize: 80,
                   color: Colors.white,
