@@ -1,5 +1,6 @@
 import 'package:calcu_ladora/components/display.dart';
 import 'package:calcu_ladora/components/keyboard.dart';
+import 'package:calcu_ladora/core/services/auth/auth_service.dart';
 import 'package:calcu_ladora/models/memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -25,11 +26,68 @@ class _CalculatorState extends State<Calculator> {
       DeviceOrientation.portraitUp,
     ]);
     return MaterialApp(
-      home: Column(
-        children: [
-          Display(memory.value),
-          Keyboard(cb: _onPressed),
-        ],
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(37, 37, 39, 1),
+          actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 77),
+              child: TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    SizedBox(width: 10),
+                    Text(
+                      'Calculadora',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            DropdownButtonHideUnderline(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: DropdownButton(
+                  icon: const Icon(
+                    size: 32,
+                    Icons.more_vert,
+                    color: Colors.white,
+                  ),
+                  items: [
+                    DropdownMenuItem(
+                      value: 'logout',
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Icon(Icons.exit_to_app),
+                            SizedBox(width: 10),
+                            Text('Sair'),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                  onChanged: (item) {
+                    if (item == 'logout') {
+                      AuthService().logout();
+                    }
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
+        body: Column(
+          children: [
+            Display(memory.value),
+            Keyboard(cb: _onPressed),
+          ],
+        ),
       ),
     );
   }
