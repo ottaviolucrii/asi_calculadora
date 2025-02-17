@@ -6,6 +6,7 @@ import 'package:calcu_ladora/screens/converter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
 class Calculator extends StatefulWidget {
   const Calculator({Key? key}) : super(key: key);
 
@@ -53,20 +54,20 @@ class _CalculatorState extends State<Calculator> {
                   TextButton(
                     onPressed: () => _navigateToPage(0),
                     style: TextButton.styleFrom(
-                      foregroundColor: _selectedIndex == 0 ? Colors.orange : Colors.white,
+                      foregroundColor: _selectedIndex == 0 ? const Color.fromARGB(255, 233, 153, 32) : Colors.white,
                     ),
                     child: Row(
                       children: [
                         Icon(
                           Icons.calculate,
-                          color: _selectedIndex == 0 ? Colors.orange : Colors.white,
+                          color: _selectedIndex == 0 ? const Color.fromARGB(255, 233, 153, 32) : Colors.white,
                         ),
                         const SizedBox(width: 10),
                         Text(
                           'Calculadora',
                           style: TextStyle(
                             fontSize: 20,
-                            color: _selectedIndex == 0 ? Colors.orange : Colors.white,
+                            color: _selectedIndex == 0 ? const Color.fromARGB(255, 233, 153, 32) : Colors.white,
                           ),
                         ),
                       ],
@@ -76,20 +77,19 @@ class _CalculatorState extends State<Calculator> {
                   TextButton(
                     onPressed: () => _navigateToPage(1),
                     style: TextButton.styleFrom(
-                      foregroundColor: _selectedIndex == 1 ? Colors.orange : Colors.white,
+                      foregroundColor: _selectedIndex == 1 ? const Color.fromARGB(255, 233, 153, 32) : Colors.white,
                     ),
                     child: Row(
                       children: [
                         Icon(
                           Icons.swap_horiz,
-                          color: _selectedIndex == 1 ? Colors.orange : Colors.white,
+                          color: _selectedIndex == 1 ? const Color.fromARGB(255, 233, 153, 32) : Colors.white,
                         ),
                         const SizedBox(width: 10),
                         Text(
                           'Conversor',
                           style: TextStyle(
                             fontSize: 20,
-                            color: _selectedIndex == 1 ? Colors.orange : Colors.white,
                           ),
                         ),
                       ],
@@ -136,7 +136,7 @@ class _CalculatorState extends State<Calculator> {
                 Keyboard(cb: _onPressed),
               ],
             ),
-            const ConverterScreen(),
+            ConverterScreen(),
           ],
         ),
       ),
